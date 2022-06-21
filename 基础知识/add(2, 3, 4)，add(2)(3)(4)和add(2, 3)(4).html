@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			let _typeof = function(data) {
+				let value = /\[object (\w+)\]/.exec(
+					Object.prototype.toString.call(data)
+				);
+				return value ? value[1].toLowerCase() : '';
+			}
+			// 参数3个的时候，返回值
+			// 参数小于3的时候，返回函数，比如，1，2
+			function add(...arg) {
+				// TODO转出数组
+				
+				let ary = [...arg];
+				let sum = 0;
+				// 相加
+				ary.forEach(ele => {
+					// 判断参数类型
+					if (_typeof(ele) !== 'number') {
+						throw Error(`不支持非数字类型；参数${ele} (${_typeof(ele)} 类型)`)
+					}
+					sum += ele;
+				})
+				// console.log(sum);
+				// 返回
+				if (ary.length >= 3) {
+					return sum;
+				}
+				const _add = function() {
+					if (arguments.length > 1) {
+						throw Error(`暂时不支持链式调用多个参数`)
+					}
+					if (ary.length === 1) {
+						return add(sum, ...arguments)
+					}
+					return add(sum, ...arguments, 0)
+				}
+				return _add;
+			}
+			console.log(add(2, 3, 4));
+			console.log(add(2)(3)(4));
+			console.log(add(2, 3)(4));
+		</script>
+	</body>
+</html>

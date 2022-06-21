@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<img id='imgObj' src='https://a.axihe.com/assets/img/anbang-weixin.jpg' />
+		<script>
+		//预加载事件为onload,加载成功后为图片设置样式。
+			var imgObj = document.getElementById('imgObj');
+
+			function addImg(tempSrc) {
+				var imgObj1 = new Image();
+				imgObj1.src = tempSrc;
+				imgObj1.onload = function() {
+					imgObj.src = this.src;
+					imgObj.height = 50;
+					imgObj.width = 50;
+				}
+			}
+			addImg('https://p1.ssl.qhimg.com/t0125bb69c8cb37deb1.jpg'); //这里是真正的显示文件
+		</script>
+	</body>
+</html>

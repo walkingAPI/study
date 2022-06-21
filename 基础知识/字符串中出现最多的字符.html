@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script>
+		//reduce方法
+			var str = 'sdsdafsdafsafsad';
+			var res = str.split('').reduce(function(res,mun){
+				res[mun]?(res[mun]++):(res[mun]=1);
+				return res;
+			},{});
+			//console.log(res);
+			var max = 0;
+			for(var key in res){
+				if(res[key]>max){
+					max = res[key]
+				}
+			}
+			for(var key in res){
+				if(res[key]==max){
+					//console.log(key);
+				}
+			}
+			
+		//for循环方法	
+			var arr = str.split('');
+			var a ={};
+			var m = 0;
+			for(var i=0; i<arr.length;i++){
+				
+				if(a[arr[i]]){
+					a[arr[i]] += 1
+				}else{
+					a[arr[i]] = 1
+				}
+				//console.log(a);
+			}
+			console.log(a);
+			for(var key in a){
+				if(a[key]>m){
+					m = a[key]
+				}
+			}
+			for(var key in a){
+				if(a[key]==m){
+					console.log(key)
+				}
+			}
+			
+		</script>
+		
+	</body>
+</html>

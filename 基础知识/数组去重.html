@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+	<script>
+		//方法一：
+		var arr = ['a', 'g', 'q', 'd', 'a', 'e', 'q'];
+		var result = [... new Set(arr)];
+		console.log(result);
+		//方法二：	
+		var result1 = [];
+		for (var i = 0; i < arr.length; i++) {
+			if (result1.indexOf(arr[i]) == -1) {
+				result1.push(arr[i])
+			}
+		}
+		console.log(result1);
+		//方法三：	
+		var result2 = [];
+		for (var i = 0; i < arr.length; i++) {
+			if (!result2.includes(arr[i])) {
+				result2.push(arr[i])
+			}
+		}
+		console.log(result2);
+		//方法四：	
+		var a = arr.reduce(function (res, mun) {
+			if (res.indexOf(mun) === -1) {
+				res.push(mun)
+			}
+			return res
+		}, [])
+		console.log(a);
+
+		//方法五：	
+		function unique(arr) {
+			for (var i = 0; i < arr.length; i++) {
+				for (var j = i + 1; j < arr.length; j++) {
+					if (arr[i] == arr[j]) { //第一个等同于第二个，splice方法删除第二个
+						arr.splice(j, 1);
+						j--;
+					}
+				}
+			}
+			return arr;
+		}
+		console.log(unique(arr));
+
+		//方法六：
+		function unique(arr) {
+			if (!Array.isArray(arr)) {
+				console.log('type error!')
+				return;
+			}
+			arr = arr.sort()
+			var arrry = [arr[0]];
+			for (var i = 1; i < arr.length; i++) {
+				if (arr[i] !== arr[i - 1]) {
+					arrry.push(arr[i]);
+				}
+			}
+			return arrry;
+		}
+
+		//方法七：
+		function unique(arr) {
+			return arr.filter(function (item, index, arr) {
+				//当前元素，在原始数组中的第一个索引==当前索引值，否则返回当前元素
+				return arr.indexOf(item, 0) === index;
+			});
+		}
+		
+	</script>
+</body>
+
+</html>

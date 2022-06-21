@@ -1,0 +1,112 @@
+instanceof运算符能判断哪些类型?
+实际开发中闭包的应用
+异步和同步的区别
+DOM事件和event loop的关系
+DOM性能优化？
+Location 对象有哪些方法？
+阻止冒泡和默认行为？
+什么是事件代理？
+描述事件冒泡的流程？
+无限下拉图片列表，如何监听每个图片的点击？
+什么是跨域？什么是JSONP？
+什么是fetch?
+Http状态码以及代表的意义？
+http methods？
+get 和post的区别？
+什么是Restful API？
+请求标头有哪些？
+响应标头有哪些？
+关于https？
+window.onload 和 DOMContentLoaded？
+性能优化原则是什么？
+性能优化如何入手？
+hash文件名缓存
+什么是SSR服务端渲染？
+什么是懒加载？
+常见的web前端攻击方式有哪些？
+var和let const的区别：
+列举强制类型转换和隐式类型转换?
+数组的API，有哪些是纯函数？
+[10, 20, 30].map(parseInt)结果是什么？
+函数声明和函数表达式的区别？
+new Object() 和 Object.create()区别？
+如何捕获JS中的异常？
+什么是Sourcemap？
+什么是JSON？
+如何获取当前页面url参数？
+关于Object.assign？
+什么是RAF？
+关于Map？
+Map和Object的区别？
+Set和数组的区别？
+WeakMap和WeakSet？
+iframe的优缺点？
+如何实现浏览器内多个标签页之间的通信?
+线程与进程的区别
+你都使用哪些工具来测试代码的性能？
+什么是 FOUC（无样式内容闪烁）？你如何来避免 FOUC？
+null和undefined的区别？
+new操作符具体干了什么呢?
+js延迟加载的方式有哪些？
+如何解决跨域问题?
+documen.write和 innerHTML的区别？
+如何判断当前脚本运行在浏览器还是node环境中？
+什么叫优雅降级和渐进增强？
+javascript继承的7种方法？
+ajax过程？
+ajax的优点缺点？
+异步加载和延迟加载？
+前端安全问题？
+ie各版本和chrome可以并行下载多少个资源？
+javascript里面的继承怎么实现，如何避免原型链上面的对象共享
+Flash、Ajax各自的优缺点，在使用中如何取舍？
+哪些地方会出现css阻塞，哪些地方会出现js阻塞？
+eval是做什么的？
+JavaScript原型，原型链 ? 有什么特点？
+事件、IE与火狐的事件机制有什么区别？ 如何阻止冒泡？
+栈和队列的区别?
+关于Http 2.0 你知道多少？
+什么是Web Worker？
+CDN，除了加速和安全原来还有这些功能？
+calc, support, media各自的含义及用法？
+如何遍历A节点的父节点下的所有子节点？
+说一下CORS？
+如何中断ajax请求？
+export和export default的区别？
+什么是 Generator 函数？
+defer与async的区别是？
+ES6 模块与 CommonJS 模块区别？
+undeclared 与 undefined 的区别？
+什么是防抖？什么是节流？
+箭头函数与普通函数的区别？
+深度遍历广度遍历的区别？
+JS中如何将页面重定向到另一个页面？
+setInterval和setTimeout的区别，他们的返回值是什么类型的？表示什么含意呢？
+DOM中节点有多少类型？元素节点和文本节点的区别？他们有浏览器兼容性问题吗？
+childNodes和children的区别
+document.documentElement和document.body的区别？
+Date类中的getTime方法？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>innerText这个属性firefox浏览是不支持的，firefox用什么属性替代innerText这个属性，请写一个没有浏览器兼容性的获取元素文本的方法</title>
+	</head>
+	<body>
+		<script>
+			var oDiv = document.getElementById('div');
+			if (typeof oDiv.innerText === 'undefined') {
+				oDiv.textContent = '火狐';
+				console.log(oDiv.textContent);
+			} else {
+				oDiv.innerText = '非火狐';
+				console.log(oDiv.innerText);
+			}
+		</script>
+	</body>
+</html>

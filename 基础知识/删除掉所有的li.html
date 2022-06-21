@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="url1"> 
+		    <li>node</li> 
+		    <li>node</li> 
+		    <li>node</li> 
+		    <li>node</li> 
+		    <li>node</li> 
+		</ul>
+		<script>
+			var oLis = document.getElementById('url1').childNodes;
+			
+			while (oLis[0]) {
+			  oLis[0].parentNode.removeChild(oLis[0]);
+			}
+
+		</script>
+	</body>
+</html>

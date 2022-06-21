@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">div1</div>
+		<div id="div2">div2</div>
+		<div id="div3">div3</div>
+		
+		<script>
+			var but = document.createElement("button");
+			var butTxt = document.createTextNode('按钮');
+			but.appendChild(butTxt);
+			document.getElementsByTagName('body')[0].appendChild(but);
+			//克隆节点
+			var butN = but.cloneNode(false);
+			//cloneNode()方法不会复制添加DOM节点的JS属性，例如事件处理程序等。这个方法只复制特性，其他一切都不会复制。
+			var butTxt1 = document.createTextNode('按钮2');
+			butN.appendChild(butTxt1);
+			//添加节点
+			document.getElementsByTagName('body')[0].appendChild(butN);
+			//移动节点
+			document.getElementsByTagName('body')[0].insertBefore(butN,but);
+			//删除节点
+			document.getElementsByTagName('body')[0].removeChild(butN);
+			
+			var but2 = document.createElement("button");
+			var butTxt2 = document.createTextNode('按钮2');
+			but2.appendChild(butTxt2);
+			//替换节点
+			document.getElementsByTagName('body')[0].replaceChild(but2,but);
+			
+			
+			//封装insertAfter方法
+			function innerAfter (oldEle, newEle) {
+			  if (oldEle && oldEle.nodeType === 1 && newEle && newEle.nodeType === 1) {
+			    oldEle.nextSibling ? oldEle.parentNode.insertBefore(newEle, oldEle.nextSibling) : oldEle.parentNode.appendChild(newEle);
+			  } else {
+			    throw new Error("参数错误")
+			  }
+			}
+			var oDiv2 = document.getElementById("div2");
+			var oDiv1 = document.getElementById("div1").cloneNode(true);
+			innerAfter(oDiv2, oDiv1);
+			
+			//把某个DOM元素添加成为某个DOM元素的第一个子节点			
+			function prependChild (newNode, parentEle) {
+			  var child = parentEle.firstChild;
+			  child ? parentEle.insertBefore(newNode, child) : parentEle.appendChild(newNode);
+			}
+			var oDiv1 = document.getElementById("div1");
+			var oDiv3 = document.getElementById("div3");
+			prependChild(oDiv3, oDiv1);
+			
+			//获得某元素节点指定标签名的子元素节点
+			var oDiv1 = document.getElementById("div1");
+			console.log(getChildren(oDiv1, 'div'));
+			
+			function getChildren (ele, tag) {
+			  var children = ele.childNodes;
+			  if (typeof tag === 'string') {
+			    tag = tag.toUpperCase();
+			    var a = [];
+			    for (let i = 0; i < children.length; i++) {
+			      const node = children[i];
+			      if (node.nodeType === 1 && node.nodeName === tag) {
+			        a.push(node);
+			      }
+			    }
+			    return a;
+			  } else if (typeof tag === 'undefined') {
+			    var a = [];
+			    for (let j = 0; j < children.length; j++) {
+			      const nodej = children[i];
+			      if (nodej.nodeType === 1) {
+			        a.push(nodej);
+			      }
+			    }
+			    return a;
+			  } else {
+			    throw new Error("Tag参数类型错误!")
+			  }
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

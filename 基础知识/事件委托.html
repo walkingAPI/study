@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+		    <ul>
+		        <li >首页</li>
+		        <li xiaomi="true">小米手机</li>
+		    </ul>
+		    <div id="div2" xiaomi="true"></div>
+		</div>
+		
+		<script>
+			var oDiv2 = document.getElementById("div2");
+			document.onmouseover = function (e) {
+			    e = e || window.event;//处理事件兼容性；
+			    var tar = e.target || e.srcElement;//事件源；
+			    var xiaomi = tar.getAttribute("xiaomi");//监听的对象；
+				
+				
+				if(xiaomi === "true"){
+					tar.style.color = 'green'	;
+					tar.style.display = 'block';
+					tar.style.height = '30px';
+					tar.style.background = 'red';
+				}else{
+					tar.style.color = 'blue'		
+				}
+
+			};
+		</script>
+	</body>
+</html>

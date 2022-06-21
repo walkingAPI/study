@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		//Fibonacci数：两相邻数的和等于下一项的值。
+			function printFibonacci (n) {
+			  var arr = n > 0 ? [1] : [];
+			  if (n > 1) {
+			    for (let index = 1; index < n; index++) {
+			      arr.push(arr[index - 1] + (index >= 2 ? arr[index - 2] : 0))
+			    }
+			    return arr;
+			  }
+			}
+			console.log(printFibonacci(20));
+		</script>
+	</body>
+</html>

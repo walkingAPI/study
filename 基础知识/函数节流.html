@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+
+		<script>
+			function throtte(fn, delay) {
+				var prevTime = +new Date();
+				return function() {
+					var curTime = +new Date();
+					if (curTime - prevTime > delay) {
+						fn.apply(this, arguments);
+						prevTime = curTime;
+					}
+			 }
+			};
+			var throtteScroll = throtte(function() {
+				console.log(111)
+			}, 500);
+			window.onscroll = throtteScroll;
+		</script>
+
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	</body>
+</html>

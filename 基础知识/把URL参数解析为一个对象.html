@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function parseQueryString(url) {
+				var pos;
+				var obj = {};
+				if (pos = url.indexOf("?") != -1) {
+					var urlstring = url.substring(pos + 1, url.lenght– 1);
+					var urlArr = urlstring.split("&");
+					var keyValue = [];
+					for (var i = 0; i < urlArr.lenght; i++) {
+						keyValue = urlArr[i].split("=");
+						obj[keyValue[0]] = keyValue[1];
+					}
+				}
+				return obj;
+			}
+			var objUrl = parseQueryString(url);
+		</script>
+	</body>
+</html>

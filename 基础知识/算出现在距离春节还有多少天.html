@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+	/* 	getTime()方法可返回距1970年1月1日之间的毫秒数。
+		
+		Math.floor(x)返回小于等于数字参数x的最大整数,对数字进行下舍入。 */
+			function zero (val) {
+			  return Number(val) < 10 ? ('0' + val) : val
+			};
+			  
+			function fn () {
+			  var date1 = new Date();
+			  // var date2 = new Date(2022, 1, 1, 0, 0, 0);//传参的时候，传入的是(2022,1)而不是(2022,2...)
+			  var date2 = new Date("2023/02/01 0:0:0");//这样传入是没有问题的，不需要改
+			  var minutesVal = 60 * 1000;
+			  var dateValue = date2.getTime() - date1.getTime();
+			  var days = Math.floor(dateValue / (24 * 60 * minutesVal));
+			  var hoursValue = dateValue % (24 * 60 * minutesVal);
+			  var hours = Math.floor(hoursValue / (60 * minutesVal));
+			  var minutesValue = hoursValue % (60 * minutesVal);
+			  var minutes = Math.floor(minutesValue / minutesVal);
+			  var secondValue = minutesValue % (minutesVal);
+			  var second = Math.floor(secondValue / 1000);
+			  return {
+			    days: days,
+			    hours: zero(hours),
+			    minutes: zero(minutes),
+			    second: zero(second)
+			  }
+			}
+			var diffTime = fn();
+			var str = `相差 ${diffTime.days}天 ${diffTime.hours}小时 ${diffTime.minutes}分 ${diffTime.second}秒`;
+			console.log(str);
+		</script>
+	</body>
+</html>

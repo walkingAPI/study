@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>API</title>
+
+</head>
+<body>
+
+</body>
+</html>
+<script>
+//数组
+var array = new Array();
+array.toString();   //把数组转换为字符串，并返回结果。
+array.valueOf();    //返回数组对象的原始值。
+
+array.copyWithin(str,star,end) //从数组的指定位置拷贝元素到数组的另一个指定位置中。
+array.entries();    //返回数组的可迭代对象。
+array.fill("aaa",star);   //使用一个固定值来填充数组。
+array.includes(str);   //判断一个数组是否包含一个指定的值。
+
+array.isArray();    //判断对象是否为数组。
+array.join("");     //把数组的所有元素放入一个字符串。
+array.keys();   //返回数组的可迭代对象，包含原始数组的键(key)。
+
+
+array.indexOf(str);    //搜索数组中的元素，并返回它所在的位置
+array.lastIndexOf(str); //搜索数组中的元素，并返回它最后出现的位置。
+
+
+Array.from();   //通过给定的对象中创建一个数组。
+array.reduce(function(){});     //将数组元素计算为一个值（从左到右）。
+array.reduceRight();    //将数组元素计算为一个值（从右到左）。
+array.find(str);   //返回符合传入测试（函数）条件的数组元素。
+array.findIndex(str);   //返回符合传入测试（函数）条件的数组元素索引。
+array.every(function(){});  //检测数值元素的每个元素是否都符合条件。
+array.some(function(){});   //检测数组元素中是否有元素符合指定条件。
+
+//会改变数组的方法：
+array.pop(str);    //删除数组的最后一个元素并返回删除的元素。
+array.push(str);   //向数组的末尾添加一个或更多元素，并返回新的长度。
+array.shift(str);  //删除并返回数组的第一个元素。
+array.unshift(str);    //向数组的开头添加一个或更多元素，并返回新的长度。
+array.splice("添加的位置","删除多少元素","要添加的元素"); //从数组中添加或删除元素。
+array.sort(function(a,b){a-b});   //对数组的元素进行排序。
+array.reverse();    //反转数组的元素顺序。
+array.forEach(function(){});    //数组每个元素都执行一次回调函数。
+//不会改变数组的方法：
+array.filter();     //检测数值元素，并返回符合条件所有元素的数组。
+concat(arr1,arr2)  //连接两个或更多的数组，并返回结果。
+array.slice(str,end);  //选取数组的的一部分，并返回一个新数组。
+array.map(function(){});    //通过指定函数处理数组的每个元素，并返回处理后的数组。
+
+
+//字符串
+var str = "";
+str.toString();
+str.valueOf();
+//查找
+str.concat();   //连接两个或更多的字符串  返回新的字符串
+str.indexOf();  //返回某个字符串值在字符串中首次出现的位置
+str.lastIndexOf();  //从后向前搜索，并从起始位置0开始计算 返回字符串最后出现的位置
+str.slice(起始索引,终止索引);    //提取字符串的片段，并在新的字符串中   返回被提取的片段
+str.substr();   //从起始索引号开始提取指定数目的字符
+str.substring();//提取字符串中两个指定索引之间的字符
+str.includes();    //查找字符串中是否包含指定的子字符串
+str.charAt();   //返回在指定位置的字符
+str.charCodeAt();   //返回在指定位置的字符的Unicode编码
+str.repeat();   //复制字符串指定次数 并把它们连起来返回
+str.startsWith();   //查看字符串是否以指定的字符串开头
+//以下支持正则表达式
+str.search("a");//正则   //查找与正则相匹配的值  返回值：与之匹配的起始位置
+str.match();    //查找到一个或多个正则匹配的元素  返回值：存放匹配结果的数组
+str.replace('要替换的值','替换成什么');  //在字符串中查找匹配的子串，并替换与正则匹配的子串
+str.split();    //把字符串分割成字符串数组
+
+str.toLowerCase();  //把字符转换成小写
+str.toUpperCase();  //把字符转换成大写
+str.toLocaleLowerCase();    //根据本地语言环境把字符转换成小写
+str.toLocaleUpperCase();    //根据本地语言环境把字符转换成大写
+str.trim(); //去除字符串两边的空白
+
+
+//全局函数
+eval(); //计算字符串，并把它作为脚本来执行
+isFinite(); //检查某个值是否为有穷大的数
+isNaN();    //检查某个值是否为数字
+Number();   //把对象转换为数字
+String();   //把对象转换为字符串
+parseInt(); //解析一个字符串 并返回一个整数
+parseFloat();   //解析一个字符串 并返回一个浮点数
+
+</script>
+
+任何对象转为布尔值，都为得到 true（切记！在 JS 中，只有 0，-0，NaN，""，null，undefined 这六个值转布尔值时，结果为 false）。
+
+
+操作符之间的优先级（高到低）：
+算数操作符 → 比较操作符 → 布尔（逻辑）操作符 → “=”赋值符号
+逻辑操作符中，逻辑与（&&）优先级高于逻辑或（||）
+
+JSON.stringify(obj) //输出对象中的内容
+Object.values(obj)  //输出对象中的值
+Math.min.apply(Math,Object.values(obj)) //对象值中的最小值
+
+ES6 新增：
+PadStart(8,"0");  头部补全
+PadEnd(8,"0");    尾部补全
+
+
+
+

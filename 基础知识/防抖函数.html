@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>防抖函数</title>
+	</head>
+	<body>
+
+
+
+
+		<script>
+			function debounce(fn, delay) {
+				var timer;
+				return function() {
+					var that = this,
+						innerArgs = [].slice.call(arguments);
+					clearTimeout(timer);
+					timer = setTimeout(function() {
+						fn.apply(that, innerArgs);
+					}, delay)
+				}
+			};
+			window.onscroll = debounce(function() {
+				console.log('滚动了')
+			}, 100)
+		</script>
+		
+		
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	</body>
+</html>

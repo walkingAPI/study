@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function query(name) {
+            const search = location.search.substr(1)
+            const reg = new RegExp(`(^|&)${name}=([^&]*)(&|$)`, 'i')
+            const res = search.match(reg)
+            if (res === null) {
+                return null
+            }
+            return res[2]
+        }
+    </script>
+    <script>
+        function query(name) {
+            const search = location.search
+            const p = new URLSearchParams(search)
+            return p.get(name)
+        }
+        console.log(query('b'))
+    </script>
+    //将url参数解析为JS对象
+    <script>
+        function queryToObj() {
+            const res = {}
+            const search = location.search.substr(1)  //去掉前面的'?'
+            search.split('&').forEach(paramStr => {
+                const arr = paramStr.split('=')
+                const key = arr[0]
+                const val = arr[1]
+                res[key] = val
+            })
+            return res
+        }
+
+        //方法二：
+        function queryObj() {
+            const res = {}
+            const pList = new URLSearchParams(location.search)
+            pList.forEach((val, key) => {
+                res[key] = val
+            })
+            return res
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+haslayout 问题引起的常见 bug：
+
+1、IE6 及更低版本的双空白边浮动 bug　　
+
+       bug 修复: display:inline;　　
+
+2、IE5-6/win 的 3 像素偏移 bug　　
+
+       bug 修复: _height:1%;　　
+
+3、E6 的躲躲猫(peek-a-boo) bug　　
+
+       bug 修复: _height:1%; 

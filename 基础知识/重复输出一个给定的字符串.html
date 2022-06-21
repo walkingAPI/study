@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function repeatStringNumTimes(str, num) {
+				if(num>0){
+					var str = str.repeat(num)
+				}else if(num == 0){
+					str = str
+				}else{
+					str = ''
+				}
+				
+				return console.log(str);
+			}
+			repeatStringNumTimes("abc", 3);
+			
+			
+			function repeatStringNumTimes1(string, times) {
+			  var repeatedString = "";
+			  while (times > 0) {
+			    repeatedString += string;
+			    times--;
+			  }
+			  return console.log(repeatedString);
+			}
+			repeatStringNumTimes1("abc", 3);
+			
+			
+			function repeatStringNumTimes3(string, times) {
+			  var repeatedArr = []; //
+			  while (times > 0) {
+			    repeatedArr.push(string);
+			    times--;
+			  }
+			  return console.log(repeatedArr.join(""));
+			}
+			repeatStringNumTimes3("abc", 3)
+			
+			
+			function repeatStringNumTimes4(string, times) {
+			  var repeatedString = "";
+			  for(var i = 0; i < times ;i++) {
+			    repeatedString += string;
+			  }
+			  return console.log(repeatedString);
+			}
+			repeatStringNumTimes4("abc", 3)
+			
+			
+			function repeatStringNumTimes5(string, times) {
+			  if(times < 0) 
+			    return "";
+			  if(times === 1) 
+			    return string;
+			  else 
+			    return string + repeatStringNumTimes5(string, times - 1);
+			}
+			console.log(repeatStringNumTimes5("abc", 3));
+
+
+			function repeatStringNumTimes6(string, times) {
+			  return times > 0 ? string.repeat(times) : "";
+			}
+			console.log(repeatStringNumTimes6("abc", 3));
+		</script>
+	</body>
+</html>

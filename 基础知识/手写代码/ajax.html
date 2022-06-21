@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // get 请求
+        function ajax(url, successfn) {
+            const xhr = new XMLHttpRequest()
+            xhr.open("GET", url, true)
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        successfn(xhr.responseText)
+                    } else {
+                        console.log('请求异常')
+                    }
+                }
+            }
+            xhr.send()
+        }
+
+
+            // post 请求
+            const xhr1 = new XMLHttpRequest()
+            xhr1.open("POST", "/api", true)
+            xhr1.onreadystatechange = function () {
+                if (xhr1.readyState === 4) {
+                    if (xhr1.status === 200) {
+                        alert(xhr1.responseText);
+                    } else {
+                        console.log('请求异常')
+                    }
+                }
+            }
+            const postData = {
+                userName: 'zhangsan',
+                password: 'xxx'
+            }
+            xhr1.send(JSON.stringify(postData))    //注意：发送的是字符串
+
+
+
+            function ajax(url) {
+                const p = new Promise((resolve, reject) => {
+                    const xhr = new XMLHttpRequest()
+                    xhr.open("GET", url, true)
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4) {
+                            if (xhr.status === 200) {
+                                resolve(
+                                    JSON.parse(xhr.responseText)
+                                )
+                            } else if (xhr.status === 404) {
+                                reject(new Error('404'))
+                            }
+                        }
+                    }
+                    xhr.send(null)
+                })
+                return p
+            }
+    </script>
+</body>
+
+</html>

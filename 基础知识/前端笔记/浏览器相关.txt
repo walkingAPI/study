@@ -1,0 +1,13 @@
+阻止默认事件：
+e.preventDefault()
+e.returnValue = false  (IE)
+阻止冒泡：
+e.stopPropagation()
+e.cancelBubble = true (IE)
+
+关于History对象的属性或方法:
+
+length      返回浏览器历史列表中的URL数量
+back()      加载 history 列表中的前一个URL
+forward() 加载 history 列表中的下一个URL
+go()         加载history列表中的某个具体页面。

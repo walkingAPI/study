@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="myDiv" style="color: red;"></div>
+		<script>
+			var myDiv = document.getElementById("myDiv");
+			if(window.getComputedStyle){//标准浏览器
+				
+				var computedStyle = document.defaultView.getComputedStyle(myDiv, null); 
+			}else{
+				var computedStyle = myDiv.currentStyle; 	//currentStyle是IE的属性
+			}
+			
+			console.log(computedStyle);
+			
+		</script>
+	</body>
+</html>

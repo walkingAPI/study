@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		//借用toString方法,封装判断可复杂数据类型object（是否是Array、Date类的实例）的方法
+		
+			let _typeof = function (data) {
+			    let value = /\[object (\w+)\]/.exec(	//\w  查找单词字符。  n+ 匹配任何包含至少一个 n 的字符串。
+			       Object.prototype.toString.call(data)
+			    );
+				//console.log(value);
+			    return value ? value[1].toLowerCase() : '';
+			}
+
+			console.log(_typeof([]));
+			
+
+//exec() 方法用于检索字符串中的正则表达式的匹配。
+// 返回值
+// 返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <title>1px question</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" id="WebViewport"
+        content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script>
+        var Event = {
+            list: [],
+            //增加订阅者
+            listen: function (key, fn) {
+                if (!this.list[key]) {
+                    this.list[key] = [];
+                }
+                // 订阅的消息添加到缓存列表中
+                this.list[key].push(fn);
+            },
+            //发布消息
+            trigger: function () {
+                var key = Array.prototype.shift.call(arguments);// arguments 是发布消息时附送的参数
+                var fns = this.list[key];// 取出该消息对应的回调函数的集合
+                // 如果没有订阅过该消息的话，则返回
+                if (!fns || fns.length === 0) {
+                    return;
+                }                
+                // 挨个处理调用
+                for (var i = 0; i < fns.length; i++) {
+                    fns[i].apply(this, arguments);
+                }
+            }
+        };
+
+        var initEvent = function (obj) {
+            for (var i in event) {
+                obj[i] = event[i];
+            }
+        };
+
+
+        event.remove = function (key, fn) {
+            var fns = this.list[key];
+            // 如果key对应的消息没有订阅过的话，则返回
+            if (!fns) {
+                return false;
+            }
+            // 如果没有传入具体的回调函数，表示需要取消key对应消息的所有订阅
+            if (!fn) {
+                fn && (fns.length = 0);
+            } else {
+                for (var i = fns.length - 1; i >= 0; i--) {
+                    var _fn = fns[i];
+                    if (_fn === fn) {
+                        fns.splice(i, 1); // 删除订阅者的回调函数
+                    }
+                }
+            }
+        };
+
+
+        // 我们再来测试下，我们还是给shoeObj这个对象添加发布-订阅功能；
+        var shoeObj = {};
+        initEvent(shoeObj);
+
+        // 小红订阅如下消息
+        shoeObj.listen('red', function (size) {
+            console.log("尺码是：" + size);
+        });
+
+        // 小花订阅如下消息
+        shoeObj.listen('block', function (size) {
+            console.log("再次打印尺码是：" + size);
+        });
+        shoeObj.trigger("red", 40);
+        shoeObj.trigger("block", 42);
+        console.log(event.list);
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <p id="para"> 5 > 3 </p>
+    </div>
+
+</body>
+
+</html>

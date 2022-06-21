@@ -1,0 +1,25 @@
+typeof 运算符能判断哪些类型?
+== 运算符 何时用===运算符？
+truly变量 和 falsely变量 
+逻辑判断：
+自由变量取值
+this取什么值
+将具有length属性的对象或伪数组转成数组
+then和catch改变状态：
+什么是async/await ?
+async/await和Promise的关系?
+异步的本质是什么？
+for...of？
+宏任务和微任务？
+querySelectorAll和getElementsByTagName的区别？
+property和attribute？
+Screen对象有哪些方法？
+History 对象有哪些方法和属性？
+什么是高阶函数？简单实现一个？
+什么是函数柯里化？简单实现一个？
+请解释一下 JavaScript 的同源策略？
+为什么要有同源限制？
+可无视同源策略标签有哪些？他们可以做什么？
+cookie做本地存储的缺点？
+localStorage和sessionStorage？
+不同刷新操作，对缓存的影响？

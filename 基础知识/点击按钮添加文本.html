@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>页面上有一个按钮，点击后，在按钮后面插入一个label，内容显示"OK"，已有元素结构</title>
+	</head>
+	<body>
+		<input id="btnOK" type="button" value="点击我"/>
+		
+		
+		
+		<script>
+			window.onload = function(){
+				var btnOK = document.getElementById('btnOK');
+				btnOK.onclick= function(e){
+					var labels = document.createElement('label');
+					var labeltext = document.createTextNode('OK');
+					labels.appendChild(labeltext);
+					btnOK.parentNode.appendChild(labels);
+				}
+			}
+		
+		
+		</script>
+	</body>
+</html>

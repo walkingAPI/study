@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			const add = (...args) => {
+				let sum = args.reduce((pre, crt) => pre + crt);
+				const accu = (...args2) => {
+					sum += args2.reduce((pre, crt) => pre + crt);
+					return accu;
+				}
+				accu.valueOf = () => sum;
+				return accu;
+			}
+			console.log(add(2, 3)(5)) //10
+
+
+			function add(...args) {
+				var arr = [];
+				arr.push(...args);
+
+				var fun2 = function(...args2) {
+					arr.push(...args2);
+					return fun2;
+				}
+				fun2.toString = function() {
+					return arr.reduce(function(a, b) {
+						return a + b;
+					})
+				}
+
+				return fun2;
+			}
+
+			console.log(add(2, 3));
+			console.log(add(2, 3)(5)) //10
+		</script>
+	</body>
+</html>

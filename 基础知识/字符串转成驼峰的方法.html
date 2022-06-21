@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			var str = 'border-bottom-color';
+			var strRg = str.replace(/\-[a-z]/g, function (params) {
+			  return params.charAt(1).toUpperCase();
+			})
+			console.log(strRg);
+			
+			
+			var str = 'border-bottom-color';
+			var aNew = [];
+			aNew = str.split('-');
+			for (let index = 0; index < aNew.length; index++) {
+			  if (index != 0) {
+			    aNew[index] = aNew[index].substr(0, 1).toUpperCase() + aNew[index].substr(1);
+			  }
+			}
+			str = aNew.join('');
+			console.log(str);
+		</script>
+	</body>
+</html>
